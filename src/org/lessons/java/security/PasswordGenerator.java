@@ -9,9 +9,9 @@ public class PasswordGenerator {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Insert your name");
-        String name = input.nextLine();
-        String formattedName = name.substring(0, 1).toUpperCase() + name.substring(1);
+        System.out.println("Insert your first name");
+        String firstName = input.nextLine();
+        String formattedFirstName = firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
 
         System.out.println("Insert your last name");
         String lastName = input.nextLine();
@@ -22,19 +22,20 @@ public class PasswordGenerator {
         String formattedFavoriteColor = favoriteColor.toLowerCase();
 
         System.out.println("Insert the year you were born in (4 numbers)");
-        int year = input.nextInt();
+        int birthYear = input.nextInt();
 
         System.out.println("Insert the month you were born in (in number(s))");
-        int month = input.nextInt();
+        int birthMonth = input.nextInt();
 
         System.out.println("Insert the day of the month you were born in");
-        int day = input.nextInt();
+        int birthDay = input.nextInt();
 
-        int secretNumber = day + month + year;
+        int secretNumber = birthDay + birthMonth + birthYear;
 
-        System.out.println("Your totally secure password is: " +
-                formattedName + "-" + formattedLastName + "-" +
-                formattedFavoriteColor + "-" + secretNumber);
+        String passwordGenerator = formattedFirstName + "-" + formattedLastName + "-" +
+                formattedFavoriteColor + "-" + secretNumber;
+
+        System.out.println("Your totally secure password is: " + passwordGenerator);
 
         input.close();
     }
